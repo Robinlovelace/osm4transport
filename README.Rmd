@@ -1,0 +1,28 @@
+---
+title: "OpenStreetMap for transport planning: a review of its uptake based on an analysis of academic publications and government reports"
+author: "Robin Lovelace"
+date: '`r Sys.Date()`'
+output:
+  github_document: default
+  pdf_document: default
+  word_document: default
+bibliography: software.bib
+---
+
+```{r}
+# get citations
+refs = RefManageR::ReadZotero(group = "418217", .params = list(collection = "JFR868KJ", limit = 100))
+RefManageR::WriteBib(refs, "software.bib")
+```
+
+
+
+## Abstract
+
+
+
+```{r}
+test = fulltext::ft_search(query = "transport planning", from = "crossref")
+test = fulltext::ft_search(query = "transport planning", from = "arxiv")
+test$arxiv$data
+```
